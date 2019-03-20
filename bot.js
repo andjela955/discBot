@@ -16,9 +16,22 @@ bot.on('ready', function (evt) {
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
 });
+
+function listOfCommands() {
+    var commands = ['hi', 'help'];
+    var formattedList = "\n";
+
+    let i = 0;
+    for (i; i < commands.length; i++) {
+        formattedList += commands[i] + "\n";
+    }
+
+    return formattedList;
+ } 
+
 bot.on('message', function (user, userID, channelID, message, evt) {
 
-    var commands = ['hi', 'help'];
+   
 
 
     if (message.substring(0, 1) == '~') {
@@ -37,7 +50,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'help':
                 bot.sendMessage({
                     to: channelID,
-                    message: user + ', here is the list of commands I currently understand:' + commands
+                    message: '@' + user + ', here is the list of commands I currently understand: \n' + listOfCommands()
                 });
             break;
             default:
