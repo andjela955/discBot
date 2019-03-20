@@ -42,7 +42,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         const withoutPrefix = message.content.slice(config.prefix.length);
         const split = withoutPrefix.split(/ +/);
         const command = split[0];
-        const args = split.slice(1);
+        args = split.slice(1);
 
         switch(cmd) {
             case 'hi':
