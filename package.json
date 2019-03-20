@@ -1,0 +1,11 @@
+{
+  "name": "helpig",
+  "version": "1.0.0",
+  "description": "Supportive bot",
+  "main": "bot.js",
+  "author": "Lyzer#2837",
+  "dependencies": {
+    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+    "winston": "^3.2.1"
+  }
+}
