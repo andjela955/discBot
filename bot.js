@@ -37,12 +37,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         var args = message.substring(1).split(' ');
         var cmd = (args[0]).toLowerCase();
        
-        //args = args.splice(1);
+        args = args.splice(1);
 
-        const withoutPrefix = message.content.slice(config.prefix.length);
-        const split = withoutPrefix.split(/ +/);
-        const command = split[0];
-        args = split.slice(1);
+    
 
         switch(cmd) {
             case 'hi':
@@ -54,7 +51,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'help':
                 bot.sendMessage({
                     to: channelID,
-                    message: `${message.author.username}` + ', here is the list of commands I currently understand:' + listOfCommands()
+                    message: user + ', here is the list of commands I currently understand:' + listOfCommands()
                 });
             break;
             default:
