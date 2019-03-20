@@ -21,18 +21,17 @@ function listOfCommands() {
     var commands = ['hi', 'help'];
     var formattedList = "\n";
 
+    commands.sort();
+
     let i = 0;
     for (i; i < commands.length; i++) {
-        formattedList += commands[i] + "\n";
+        formattedList += '**~' + commands[i] + "**\n";
     }
 
     return formattedList;
  } 
 
 bot.on('message', function (user, userID, channelID, message, evt) {
-
-   
-
 
     if (message.substring(0, 1) == '~') {
         var args = message.substring(1).split(' ');
@@ -50,11 +49,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'help':
                 bot.sendMessage({
                     to: channelID,
-                    message: '@' + user + ', here is the list of commands I currently understand: \n' + listOfCommands()
+                    message: '@' + user + '' + userId +', here is the list of commands I currently understand:' + listOfCommands()
                 });
             break;
             default:
-                'I am upgrading'
+                ':confused: ... I do not understand that command right now, but I am upgrading so I will probably understand it in the future. :nerd:'
          }
      }
 });
