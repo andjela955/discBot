@@ -37,6 +37,7 @@ function listOfCommands() {
  }
 
  function getRandomJoke() {
+    let min = 0;
     var jokes = [
         "What do you call a fake noodle? An Impasta.", 
         "Want to hear a joke about paper? Nevermind it's tearable.",
@@ -50,7 +51,7 @@ function listOfCommands() {
         "hat do you call a fat psychic? A four-chin teller."
     ];
 
-    return jokes[Math.random() * (jokes.length)];
+    return jokes[Math.floor(Math.random() * (jokes.length - minimum + 1)) + minimum];
  }
 
 bot.on('message', function (user, userID, channelID, message, evt) {
