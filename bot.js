@@ -38,24 +38,23 @@ bot.on('message', function (user, userID, channelID, message, evt) {
         var cmd = (args[0]).toLowerCase();
        
         args = args.splice(1);
-
+        let stringMessage = '';
     
 
         switch(cmd) {
-            case 'hi':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'Hi ' + user + '. I hope you are having a good day! :relaxed:'
-                });
+            case 'hi':  
+                stringMessage = 'Hi ' + user + '. I hope you are having a good day! :relaxed:'
             break;
             case 'help':
-                bot.sendMessage({
-                    to: channelID,
-                    message: user + ', here is the list of commands I currently understand:' + listOfCommands()
-                });
+                stringMessage = user + ', here is the list of commands I currently understand:' + listOfCommands()
             break;
             default:
-                ':confused: ... I do not understand that command right now, but I am upgrading so I will probably understand it in the future. :nerd:'
+                stringMessage = ':confused: ... I do not understand that command right now, but I am upgrading so I will probably understand it in the future. :nerd:'
          }
+
+         bot.sendMessage({
+            to: channelID,
+            message: stringMessage
+        });
      }
 });
