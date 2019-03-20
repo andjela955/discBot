@@ -31,6 +31,28 @@ function listOfCommands() {
     return formattedList;
  } 
 
+
+ function getMoodCompliment() {
+    var compliments = ['hi', 'help'];
+ }
+
+ function getRandomJoke() {
+    var jokes = [
+        "What do you call a fake noodle? An Impasta.", 
+        "Want to hear a joke about paper? Nevermind it's tearable.",
+        "Why did the coffee file a police report? It got mugged.",
+        "Dad, did you get a haircut? No I got them all cut.",
+        "What do you call a Mexican who has lost his car? Carlos.",
+        "Dad, can you put my shoes on? No, I don't think they'll fit me",
+        "Why don't skeletons ever go trick or treating? Because they have no body to go with.",
+        "What do you call an elephant that doesn't matter? An irrelephant",
+        "Want to hear a joke about construction? I'm still working on it",
+        "hat do you call a fat psychic? A four-chin teller."
+    ];
+
+    return jokes[Math.random() * (jokes.length)];
+ }
+
 bot.on('message', function (user, userID, channelID, message, evt) {
 
     if (message.substring(0, 1) == '~') {
@@ -47,8 +69,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'help':
                 stringMessage = user + ', here is the list of commands I currently understand:' + listOfCommands()
             break;
-            case 'zack':
-                stringMessage = 'You are stupid Zack'
+            case 'joke':
+                stringMessage = getRandomJoke();
             break;
             default:
                 stringMessage = ':confused: ... I do not understand that command right now, but I am upgrading so I will probably understand it in the future. :nerd:'
