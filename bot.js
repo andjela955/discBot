@@ -39,7 +39,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
        
         args = args.splice(1);
         let stringMessage = '';
-    
+        let user1 = message.mentions.users.first();
 
         switch(cmd) {
             case 'hi':  
@@ -47,6 +47,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
             case 'help':
                 stringMessage = user + ', here is the list of commands I currently understand:' + listOfCommands()
+            break;
+            case 'mention':
+                stringMessage = user1;
             break;
             default:
                 stringMessage = ':confused: ... I do not understand that command right now, but I am upgrading so I will probably understand it in the future. :nerd:'
