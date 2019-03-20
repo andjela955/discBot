@@ -37,7 +37,7 @@ function listOfCommands() {
  }
 
  function getRandomJoke() {
-    let min = 0;
+    let minimum = 0;
     var jokes = [
         "What do you call a fake noodle? An Impasta.", 
         "Want to hear a joke about paper? Nevermind it's tearable.",
