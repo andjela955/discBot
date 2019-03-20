@@ -49,7 +49,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'help':
                 bot.sendMessage({
                     to: channelID,
-                    message: '@' + user + '' + userId +', here is the list of commands I currently understand:' + listOfCommands()
+                    message: '<@' + message.author.id + '>, here is the list of commands I currently understand:' + listOfCommands()
                 });
             break;
             default:
