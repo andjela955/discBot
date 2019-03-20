@@ -39,6 +39,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
        
         args = args.splice(1);
 
+        const withoutPrefix = message.content.slice(config.prefix.length);
+        const split = withoutPrefix.split(/ +/);
+        const command = split[0];
+        const args = split.slice(1);
+
         switch(cmd) {
             case 'hi':
                 bot.sendMessage({
@@ -49,7 +54,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'help':
                 bot.sendMessage({
                     to: channelID,
-                    message: '<@' + message.author.id + '>, here is the list of commands I currently understand:' + listOfCommands()
+                    message: `${message.author.username}` + ', here is the list of commands I currently understand:' + listOfCommands()
                 });
             break;
             default:
