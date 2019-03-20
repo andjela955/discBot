@@ -49,7 +49,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 stringMessage = user + ', here is the list of commands I currently understand:' + listOfCommands()
             break;
             case 'mention':
-                stringMessage = user1;
+                stringMessage = `${user.username}#${user.discriminator} (${user.id})`;
             break;
             default:
                 stringMessage = ':confused: ... I do not understand that command right now, but I am upgrading so I will probably understand it in the future. :nerd:'
