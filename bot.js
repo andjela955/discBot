@@ -30,7 +30,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'hi':
                 bot.sendMessage({
                     to: channelID,
-                    message: 'Hi ' + user + '. I hope you are having a good day! ^_^'
+                    message: 'Hi ' + user + '. I hope you are having a d'
                 });
             break;
             // Just add any case commands if you want to..
