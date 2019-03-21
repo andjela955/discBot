@@ -34,15 +34,13 @@ function listOfCommands() {
  function getRPSCommand(userRps) {
     var emotes = [':left_facing_fist:', ':v:', ':raised_back_of_hand:'];
     var options = ['rock', 'paper', 'seissors'];
-    let minimum = 0;
-    let winner = 'bot';
     var userOption = userRps.split('_')[1];
     var emote;
     var messageWin = ':fire: YOU WIN! :fire:';
     var messageLose = ':poop: *you lose* :poop:';
     var message = '';
     var messageEqual = ':raised_hands: **Tied** :raised_hands:';
-    let botOption = options[Math.floor(Math.random() * (options.length - minimum + 1)) + minimum];
+    let botOption = options[Math.floor(Math.random() * 4)];
 
     console.log('bot=' + botOption  + ', user=' + userOption);
 
@@ -98,7 +96,6 @@ function listOfCommands() {
  }
 
  function getRandomJoke() {
-    let minimum = 0;
     var jokes = [
         "What do you call a fake noodle? An Impasta.", 
         "Want to hear a joke about paper? Nevermind it's tearable.",
@@ -112,7 +109,7 @@ function listOfCommands() {
         "What do you call a fat psychic? A four-chin teller."
     ];
 
-    return jokes[Math.floor(Math.random() * (jokes.length - minimum + 1)) + minimum];
+    return jokes[Math.floor(Math.random() * (jokes.length + 1))];
  }
 
  function getRandomGN() {
@@ -122,7 +119,7 @@ function listOfCommands() {
         "Let the silence of the night be disrupted only by your measured breathing, sleep well",
         "GO TO SLEEEEP!!!! GOOD NIGHT, SLEEP TIGHT! :relaxed:"
     ];
-    return gn[Math.floor(Math.random() * (gn.length - minimum + 1)) + minimum];
+    return gn[Math.floor(Math.random() * (gn.length + 1))];
  }
 bot.on('message', function (user, userID, channelID, message, evt) {
 
