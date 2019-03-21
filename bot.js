@@ -44,6 +44,8 @@ function listOfCommands() {
     var messageEqual = ':raised_hands: **Tied** :raised_hands:';
     let botOption = options[Math.floor(Math.random() * (options.length - minimum + 1)) + minimum];
 
+    console.log('bot=' + botOption  + ', user=' + userOption);
+
     if (userOption == 'rock') {
         if (botOption == 'paper') {
             emote = emotes[1];
