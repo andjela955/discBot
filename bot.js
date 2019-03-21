@@ -40,7 +40,7 @@ function listOfCommands() {
     var messageLose = ':poop: *you lose* :poop:';
     var message = '';
     var messageEqual = ':raised_hands: **Tied** :raised_hands:';
-    let botOption = options[Math.floor(Math.random() * 4)];
+    let botOption = options[Date.now() % 3];
 
     console.log('bot=' + botOption  + ', user=' + userOption);
 
@@ -119,7 +119,7 @@ function listOfCommands() {
         "GO TO SLEEEEP!!!! GOOD NIGHT, SLEEP TIGHT! :relaxed:"
     ];
 
-    let randomGn = gn[Math.floor(Math.random() * (gn.length + 1))];
+    let randomGn = gn[Date.now() % gn.length];
     console.log(randomGn);
     return randomGn;
  }
