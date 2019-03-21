@@ -41,7 +41,7 @@ function listOfCommands() {
     var messageWin = ':fire: YOU WIN! :fire:';
     var messageLose = ':poop: *you lose* :poop:';
     var message = '';
-    var messagaEqual = ':raised_hands: **Tied** :raised_hands:';
+    var messageEqual = ':raised_hands: **Tied** :raised_hands:';
     let botOption = options[Math.floor(Math.random() * (options.length - minimum + 1)) + minimum];
 
     if (userOption == 'rock') {
