@@ -18,7 +18,7 @@ bot.on('ready', function (evt) {
 });
 
 function listOfCommands() {
-    var commands = ['hi', 'help'];
+    var commands = ['hi', 'help', 'joke', 'gn'];
     var formattedList = "\n";
 
     commands.sort();
@@ -30,6 +30,65 @@ function listOfCommands() {
 
     return formattedList;
  } 
+
+ function getRPSCommand(userRps) {
+    var emotes = [':left_facing_fist:', ':v:', ':raised_back_of_hand:'];
+    var options = ['rock', 'paper', 'seissors'];
+    let minimum = 0;
+    let winner = 'bot';
+    var userOption = userRps.split('_')[0];
+    var emote;
+    var messageWin = ':fire: YOU WIN! :fire:';
+    var messageLose = ':poop: *you lose* :poop:';
+    var message = '';
+    var messagaEqual = ':raised_hands: **Tied** :raised_hands:';
+    let botOption = options[Math.floor(Math.random() * (options.length - minimum + 1)) + minimum];
+
+    if (userOption == 'rock') {
+        if (botOption == 'paper') {
+            emote = emotes[1];
+            message = messageLose; 
+        }
+        else if (botOption == 'seissors') {
+            emote = emotes[2];
+            message = messageWin; 
+        } 
+        else {
+            emote = emotes[0];
+            message = messageEqual; 
+        }
+    }
+    else if (userOption == 'paper') {
+        if (botOption == 'paper') {
+            emote = emotes[1];
+            message = messageEqual; 
+        }
+        else if (botOption == 'seissors') {
+            emote = emotes[2];
+            message = messageLose; 
+        } 
+        else {
+            emote = emotes[0];
+            message = messageWin; 
+        }
+    }
+    else {
+        if (botOption == 'paper') {
+            emote = emotes[1];
+            message = messageWin; 
+        }
+        else if (botOption == 'seissors') {
+            emote = emotes[2];
+            message = messageEqual; 
+        } 
+        else {
+            emote = emotes[0];
+            message = messageLose; 
+        }
+    }
+
+    return emote + '\n\n' + message;
+ }
 
 
  function getMoodCompliment() {
@@ -61,7 +120,6 @@ function listOfCommands() {
         "Let the silence of the night be disrupted only by your measured breathing, sleep well",
         "GO TO SLEEEEP!!!! GOOD NIGHT, SLEEP TIGHT! :relaxed:"
     ];
-
     return gn[Math.floor(Math.random() * (gn.length - minimum + 1)) + minimum];
  }
 bot.on('message', function (user, userID, channelID, message, evt) {
@@ -85,6 +143,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
             case 'gn':
             stringMessage = getRandomGN();
+            break;
+            case 'rps_rock' || 'rps_paper' || 'rps_seissors':
+            stringMessage = getRPSCommand(cmd);
             break;
             default:
                 stringMessage = ':confused: ... I do not understand that command right now, but I am upgrading so I will probably understand it in the future. :nerd:'
