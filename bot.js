@@ -36,7 +36,7 @@ function listOfCommands() {
     var options = ['rock', 'paper', 'seissors'];
     let minimum = 0;
     let winner = 'bot';
-    var userOption = userRps.split('_')[0];
+    var userOption = userRps.split('_')[1];
     var emote;
     var messageWin = ':fire: YOU WIN! :fire:';
     var messageLose = ':poop: *you lose* :poop:';
