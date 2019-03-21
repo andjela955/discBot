@@ -142,10 +142,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 stringMessage = getRandomJoke();
             break;
             case 'gn':
-            stringMessage = getRandomGN();
+                stringMessage = getRandomGN();
             break;
-            case 'rps_rock' || 'rps_paper' || 'rps_seissors':
-            stringMessage = getRPSCommand(cmd);
+            case 'rps_rock':
+            case 'rps_paper':
+            case 'rps_seissors':
+                stringMessage = getRPSCommand(cmd);
             break;
             default:
                 stringMessage = ':confused: ... I do not understand that command right now, but I am upgrading so I will probably understand it in the future. :nerd:'
