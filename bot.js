@@ -32,7 +32,7 @@ function listOfCommands() {
  } 
 
  function getRPSCommand(userRps) {
-    var emotes = [':left_facing_fist:', ':v:', ':raised_back_of_hand:'];
+    var emotes = [':left_facing_fist:', ':raised_back_of_hand:', ':v:'];
     var options = ['rock', 'paper', 'seissors'];
     var userOption = userRps.split('_')[1];
     var emote;
@@ -113,13 +113,15 @@ function listOfCommands() {
  }
 
  function getRandomGN() {
-    let minimum = 0;
     var gn = [
         "Don't fear, today monsters won't visit you as I will protect your sleep.", 
         "Let the silence of the night be disrupted only by your measured breathing, sleep well",
         "GO TO SLEEEEP!!!! GOOD NIGHT, SLEEP TIGHT! :relaxed:"
     ];
-    return gn[Math.floor(Math.random() * (gn.length + 1))];
+
+    let randomGn = gn[Math.floor(Math.random() * (gn.length + 1))];
+    console.log(randomGn);
+    return randomGn;
  }
 bot.on('message', function (user, userID, channelID, message, evt) {
 
