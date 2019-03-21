@@ -33,7 +33,7 @@ function listOfCommands() {
 
  function getRPSCommand(userRps) {
     var emotes = [':left_facing_fist:', ':raised_back_of_hand:', ':v:'];
-    var options = ['rock', 'paper', 'seissors'];
+    var options = ['rock', 'paper', 'scissors'];
     var userOption = userRps.split('_')[1];
     var emote;
     var messageWin = ':fire: YOU WIN! :fire:';
@@ -49,7 +49,7 @@ function listOfCommands() {
             emote = emotes[1];
             message = messageLose; 
         }
-        else if (botOption == 'seissors') {
+        else if (botOption == 'scissors') {
             emote = emotes[2];
             message = messageWin; 
         } 
@@ -63,7 +63,7 @@ function listOfCommands() {
             emote = emotes[1];
             message = messageEqual; 
         }
-        else if (botOption == 'seissors') {
+        else if (botOption == 'scissors') {
             emote = emotes[2];
             message = messageLose; 
         } 
@@ -77,7 +77,7 @@ function listOfCommands() {
             emote = emotes[1];
             message = messageWin; 
         }
-        else if (botOption == 'seissors') {
+        else if (botOption == 'scissors') {
             emote = emotes[2];
             message = messageEqual; 
         } 
@@ -147,7 +147,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
             case 'rps_rock':
             case 'rps_paper':
-            case 'rps_seissors':
+            case 'rps_scissors':
                 stringMessage = getRPSCommand(cmd);
             break;
             default:
