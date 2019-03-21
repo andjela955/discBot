@@ -48,12 +48,22 @@ function listOfCommands() {
         "Why don't skeletons ever go trick or treating? Because they have no body to go with.",
         "What do you call an elephant that doesn't matter? An irrelephant",
         "Want to hear a joke about construction? I'm still working on it",
-        "hat do you call a fat psychic? A four-chin teller."
+        "What do you call a fat psychic? A four-chin teller."
     ];
 
     return jokes[Math.floor(Math.random() * (jokes.length - minimum + 1)) + minimum];
  }
 
+ function getRandomGN() {
+    let minimum = 0;
+    var gn = [
+        "Don't fear, today monsters won't visit you as I will protect your sleep.", 
+        "Let the silence of the night be disrupted only by your measured breathing, sleep well",
+        "GO TO SLEEEEP!!!! GOOD NIGHT, SLEEP TIGHT! :relaxed:"
+    ];
+
+    return gn[Math.floor(Math.random() * (gn.length - minimum + 1)) + minimum];
+ }
 bot.on('message', function (user, userID, channelID, message, evt) {
 
     if (message.substring(0, 1) == '~') {
@@ -72,6 +82,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
             case 'joke':
                 stringMessage = getRandomJoke();
+            break;
+            case 'gn':
+            stringMessage = getRandomGN();
             break;
             default:
                 stringMessage = ':confused: ... I do not understand that command right now, but I am upgrading so I will probably understand it in the future. :nerd:'
